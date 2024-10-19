@@ -1,0 +1,101 @@
+{
+  "info": {
+    "name": "Reto Product Microservice Collection",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ef",
+    "description": "Postman Collection zum Testen des Reto-Product-Microservice.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "host": ["http://localhost:8080"],
+          "path": ["api", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Product By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/:id",
+          "host": ["http://localhost:8080"],
+          "path": ["api", "products", ":id"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Product Name\",\n    \"description\": \"Product Description\",\n    \"price\": 100.0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "host": ["http://localhost:8080"],
+          "path": ["api", "products"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update or Create Product",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Updated Product Name\",\n    \"description\": \"Updated Description\",\n    \"price\": 150.0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products/:id",
+          "host": ["http://localhost:8080"],
+          "path": ["api", "products", ":id"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/:id",
+          "host": ["http://localhost:8080"],
+          "path": ["api", "products", ":id"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
